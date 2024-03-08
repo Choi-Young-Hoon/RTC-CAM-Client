@@ -5,10 +5,10 @@
 // 'flutter create' template.
 
 // The application's name. By default this is also the title of the Flutter window.
-PRODUCT_NAME = webrtcapp
+PRODUCT_NAME = rtccamclient
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = me.synology.choiyh.webrtcapp
+PRODUCT_BUNDLE_IDENTIFIER = me.synology.choiyh.rtccamclient
 
 // The copyright displayed in application information
 PRODUCT_COPYRIGHT = Copyright © 2024 me.synology.choiyh. All rights reserved.

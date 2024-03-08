@@ -15,4 +15,8 @@
     <style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
         <item name="android:windowBackground">?android:colorBackground</item>
     </style>
+
+    <style name="RTCCAMTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/rtccam_logo</item>
+    </style>
 </resources>

@@ -7,6 +7,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:rtccamclient/pipservice.dart';
+
+import '../main.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -19,6 +22,16 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
+    PIPService.channel.setMethodCallHandler((call) async {
+      if (call.method == 'pipModeChanged') {
+        bool isInPiPMode = call.arguments as bool;
+        if (isInPiPMode) {
+          webViewController?.evaluateJavascript(source: "javascript:localVideoFullScreen()");
+        } else {
+          webViewController?.evaluateJavascript(source: "javascript:localVideoExitFullScreen()");
+        }
+      }
+    });
   }
 
   @override
@@ -32,17 +45,30 @@ class _HomeScreenState extends State<HomeScreen> {
             useWideViewPort: true,
             loadWithOverviewMode: true,
             useHybridComposition: true,
+            domStorageEnabled: true,
+            cacheMode: AndroidCacheMode.LOAD_NO_CACHE,
           ),
           crossPlatform: InAppWebViewOptions(
             mediaPlaybackRequiresUserGesture: false,
             supportZoom: false,
+            userAgent: "rtccamclient",
           ),
         ),
-        initialUrlRequest: URLRequest(
+        /*initialUrlRequest: URLRequest(
           url: Uri.parse('https://choiyh.synology.me:40001'),
-        ),
+        ),*/
         onWebViewCreated: (controller) {
           webViewController = controller;
+          if (webViewUrl != null) {
+            controller.loadUrl(urlRequest: URLRequest(url: Uri.parse(webViewUrl!)));
+          }
+        },
+        onLoadStop: (controller, url) async {
+          if (url?.toString().contains('https://choiyh.synology.me:40001/room') == true) {
+            PIPService.setPIPMode(true);
+          } else {
+            PIPService.setPIPMode(false);
+          }
         },
         androidOnPermissionRequest: (controller, origin, resources) async {
           return PermissionRequestResponse(

@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:webrtcapp/main.dart';
+import 'package:rtccamclient/main.dart';
 
 void main() {
 

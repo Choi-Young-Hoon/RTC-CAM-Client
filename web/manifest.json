@@ -1,11 +1,11 @@
 {
-    "name": "webrtcapp",
-    "short_name": "webrtcapp",
+    "name": "rtccamclient",
+    "short_name": "rtccamclient",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Web RTC Test",
+    "description": "rtccamclient",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

@@ -1,5 +1,5 @@
-name: webrtcapp
-description: "Web RTC Test"
+name: rtccamclient
+description: "rtccamclient"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -30,12 +30,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_inappwebview: ^5.8.0
-  permission_handler: ^11.3.0
-  flutter_foreground_plugin:
-    git:
-      url: https://github.com/jja08111/flutter_foreground_service_plugin.git
-      ref: 8a09c7b0aeb9d31204147fe6ee126c8a52471e3a
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -45,6 +39,14 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_inappwebview: ^5.8.0
+  permission_handler: ^11.3.0
+  flutter_foreground_plugin:
+    git:
+      url: https://github.com/jja08111/flutter_foreground_service_plugin.git
+      ref: 8a09c7b0aeb9d31204147fe6ee126c8a52471e3a
+  uni_links: ^0.5.1
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

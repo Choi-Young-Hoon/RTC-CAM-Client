@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "me.synology.choiyh" "\0"
-            VALUE "FileDescription", "webrtcapp" "\0"
+            VALUE "FileDescription", "rtccamclient" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "webrtcapp" "\0"
+            VALUE "InternalName", "rtccamclient" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 me.synology.choiyh. All rights reserved." "\0"
-            VALUE "OriginalFilename", "webrtcapp.exe" "\0"
-            VALUE "ProductName", "webrtcapp" "\0"
+            VALUE "OriginalFilename", "rtccamclient.exe" "\0"
+            VALUE "ProductName", "rtccamclient" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
